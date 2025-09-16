@@ -247,6 +247,133 @@
         .about-image { flex: 1; text-align: center; }
         .about-image svg { max-width: 100%; height: auto; }
 
+        /* Course Section */
+        #courses {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .course-info {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .course-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-header h3 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .course-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .detail-item {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .course-weeks {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .week-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, var(--primary-color), #5865f2);
+            color: white;
+            padding: 1.5rem 2rem;
+        }
+
+        .week-header h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .week-content {
+            padding: 2rem;
+        }
+
+        .day-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .day-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .day-item h5 {
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .day-item h5::before {
+            content: "📚";
+            margin-right: 0.5rem;
+        }
+
+        .day-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .day-item li {
+            padding: 0.3rem 0;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .day-item li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
         /* Contact Section */
         #contact { background: #fff; }
         .contact-info { text-align: center; font-size: 1.2rem; }
@@ -320,6 +447,24 @@
             .section { padding: 4rem 0; }
             .about-content { flex-direction: column; }
             .floating-btn { width: 50px; height: 50px; font-size: 20px; }
+            
+            /* Course Section Mobile Styles */
+            .course-header h3 { font-size: 1.8rem; }
+            .course-details { 
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .detail-item { 
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+            .week-header { padding: 1rem 1.5rem; }
+            .week-header h4 { font-size: 1.2rem; }
+            .week-content { padding: 1.5rem; }
+            .day-item { padding: 1rem; }
+            .day-item h5 { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -329,14 +474,15 @@
     <header class="main-header" id="header">
         <div class="container">
             <a href="#" class="logo">Blissful<span>Tech</span></a>
-<!--             <nav class="main-nav">
+            <nav class="main-nav">
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#services">Courses</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#courses">Courses</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav> -->
+            </nav>
         </div>
     </header>
 
@@ -351,7 +497,7 @@
         <div class="hero-content">
             <h1>Ignite Your Creativity & Skills</h1>
             <p>At BlissfulTech, we transform complex technology into simple, powerful tools for your success. Start your journey with us today.</p>
-            <a href="#services" class="btn">Discover Our Courses</a>
+            <a href="#courses" class="btn">Discover Our Courses</a>
         </div>
     </section>
 
@@ -411,6 +557,159 @@
                         <li>✓ Screen & Part Replacement</li>
                         <li>✓ Software Installation</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Outline Section -->
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Course: Basic Digital Skills</h2>
+            <div class="course-info reveal">
+                <div class="course-header">
+                    <h3>Basic Digital Skills for Secondary School Students</h3>
+                    <div class="course-details">
+                        <span class="detail-item">📅 Duration: 4 Weeks</span>
+                        <span class="detail-item">👥 Ages: 14-19 (JS3-SS3)</span>
+                        <span class="detail-item">⏰ 3 sessions/week • 1.5 hours each</span>
+                        <span class="detail-item">🏫 Nigerian Secondary School Curriculum</span>
+                    </div>
+                </div>
+                
+                <div class="course-weeks">
+                    <!-- Week 1 -->
+                    <div class="week-card reveal">
+                        <div class="week-header">
+                            <h4>Week 1: Introduction to Computers & Internet Use</h4>
+                        </div>
+                        <div class="week-content">
+                            <div class="day-item">
+                                <h5>Day 1: Introduction to Computers</h5>
+                                <ul>
+                                    <li>What is a computer?</li>
+                                    <li>Hardware vs Software</li>
+                                    <li>Basic parts: monitor, keyboard, mouse, CPU</li>
+                                    <li>Turning a computer on/off safely</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 2: Using the Internet and Google Workspace</h5>
+                                <ul>
+                                    <li>Internet basics and safety</li>
+                                    <li>Creating and using Gmail</li>
+                                    <li>Introduction to Google Workspace (Docs, Drive)</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 3: Introduction to Word Processing</h5>
+                                <ul>
+                                    <li>Typing and editing documents</li>
+                                    <li>Formatting text and paragraphs</li>
+                                    <li>Saving and printing files</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 2 -->
+                    <div class="week-card reveal">
+                        <div class="week-header">
+                            <h4>Week 2: Spreadsheet Basics (Google Sheets or Microsoft Excel)</h4>
+                        </div>
+                        <div class="week-content">
+                            <div class="day-item">
+                                <h5>Day 4: Spreadsheet Environment</h5>
+                                <ul>
+                                    <li>Understanding rows, columns, and cells</li>
+                                    <li>Entering text and numbers</li>
+                                    <li>Saving and opening spreadsheet files</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 5: Formatting & Basic Functions</h5>
+                                <ul>
+                                    <li>Merging cells, borders, and colors</li>
+                                    <li>Basic formulas: =SUM(), =AVERAGE(), =COUNT()</li>
+                                    <li>Using auto-fill and cell referencing</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 6: Real-Life Spreadsheet Tasks</h5>
+                                <ul>
+                                    <li>Creating a student score sheet</li>
+                                    <li>Making a personal timetable</li>
+                                    <li>Class budget or expense tracker</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 3 -->
+                    <div class="week-card reveal">
+                        <div class="week-header">
+                            <h4>Week 3: Basic Graphics Design (Canva / PowerPoint)</h4>
+                        </div>
+                        <div class="week-content">
+                            <div class="day-item">
+                                <h5>Day 7: Introduction to Graphic Tools</h5>
+                                <ul>
+                                    <li>What is graphic design?</li>
+                                    <li>Overview of Canva or Microsoft PowerPoint</li>
+                                    <li>Creating a design from a template</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 8: Simple Designs for School Use</h5>
+                                <ul>
+                                    <li>School ID card design</li>
+                                    <li>Flyer for school events</li>
+                                    <li>Class timetable design</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 9: Presentation Basics</h5>
+                                <ul>
+                                    <li>Creating a slide presentation</li>
+                                    <li>Adding text, images, and animations</li>
+                                    <li>Presenting to a group</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 4 -->
+                    <div class="week-card reveal">
+                        <div class="week-header">
+                            <h4>Week 4: Photocopy Machine & Project Integration</h4>
+                        </div>
+                        <div class="week-content">
+                            <div class="day-item">
+                                <h5>Day 10: Introduction to Photocopying</h5>
+                                <ul>
+                                    <li>Parts of a photocopy machine</li>
+                                    <li>How to make a simple copy</li>
+                                    <li>Loading paper and clearing jam</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 11: Integration Project</h5>
+                                <ul>
+                                    <li>Combining all learned skills</li>
+                                    <li>Creating a complete school project</li>
+                                    <li>Printing and presenting work</li>
+                                </ul>
+                            </div>
+                            <div class="day-item">
+                                <h5>Day 12: Final Assessment & Certification</h5>
+                                <ul>
+                                    <li>Practical skills assessment</li>
+                                    <li>Course review and feedback</li>
+                                    <li>Certificate presentation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
