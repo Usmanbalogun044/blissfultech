@@ -311,6 +311,152 @@
             transform: translateY(0);
         }
 
+        /* Course Outline Section */
+        #course-outline {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4fd 100%);
+        }
+
+        .course-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .course-header h2 {
+            font-size: 2.8rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .course-header::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 0.75rem auto 2rem;
+            border-radius: 2px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .course-badge {
+            background: white;
+            color: var(--text-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+            transition: all var(--transition-speed);
+        }
+
+        .course-badge.primary { border-color: var(--primary-color); color: var(--primary-color); }
+        .course-badge.secondary { border-color: var(--secondary-color); color: var(--secondary-color); }
+        .course-badge.success { border-color: #27ae60; color: #27ae60; }
+
+        .course-duration {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .course-weeks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .week-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .week-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .week-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .week-card.week-1::before { background: linear-gradient(90deg, #4a90e2, #5865f2); }
+        .week-card.week-2::before { background: linear-gradient(90deg, #1abc9c, #16a085); }
+        .week-card.week-3::before { background: linear-gradient(90deg, #f5a623, #e67e22); }
+        .week-card.week-4::before { background: linear-gradient(90deg, #9b59b6, #8e44ad); }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .week-icon {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+            filter: grayscale(0.2);
+        }
+
+        .week-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 0;
+        }
+
+        .week-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .week-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f5f5f5;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .week-card li:last-child {
+            border-bottom: none;
+        }
+
+        .week-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .week-card strong {
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .main-header .container { flex-direction: column; }
@@ -320,6 +466,14 @@
             .section { padding: 4rem 0; }
             .about-content { flex-direction: column; }
             .floating-btn { width: 50px; height: 50px; font-size: 20px; }
+            
+            .course-header h2 { font-size: 2.2rem; }
+            .course-meta { gap: 0.5rem; }
+            .course-badge { font-size: 0.8rem; padding: 0.4rem 1rem; }
+            .course-weeks { grid-template-columns: 1fr; gap: 1.5rem; }
+            .week-card { padding: 1.5rem; }
+            .week-icon { font-size: 2rem; }
+            .week-title { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -416,57 +570,70 @@
         </div>
     </section>
 
-        <!-- Course Outline Section -->
-        <section id="course-outline" style="max-width:800px;margin:2rem auto 4rem auto;padding:2rem;background:#f9f9f9;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-                    <div class="course-outline-header" style="text-align:center;margin-bottom:2rem;">
-                        <h2 style="color:#2a3d66;font-size:2.2rem;margin-bottom:0.5rem;">Basic Digital Skills for Secondary School Students</h2>
-                        <div style="font-size:1.1rem;color:#444;margin-bottom:0.5rem;">
-                            <span style="background:#e3f1ff;padding:0.2em 0.7em;border-radius:20px;margin-right:0.5em;">Ages 14-19</span>
-                            <span style="background:#fff7e3;padding:0.2em 0.7em;border-radius:20px;margin-right:0.5em;">JS3 - SS3</span>
-                            <span style="background:#e3ffe3;padding:0.2em 0.7em;border-radius:20px;">4 Weeks</span>
-                        </div>
-                        <div style="color:#888;font-size:0.98rem;">3 sessions/week, 1.5 hours/session</div>
+    <!-- Course Outline Section -->
+    <section id="course-outline" class="section">
+        <div class="container">
+            <div class="course-header reveal">
+                <h2>Basic Digital Skills for Secondary School Students</h2>
+                <div class="course-meta">
+                    <span class="course-badge primary">Ages 14-19</span>
+                    <span class="course-badge secondary">JS3 - SS3</span>
+                    <span class="course-badge success">4 Weeks</span>
+                </div>
+                <div class="course-duration">3 sessions per week • 1.5 hours per session</div>
+            </div>
+            
+            <div class="course-weeks">
+                <div class="week-card week-1 reveal">
+                    <div class="week-header">
+                        <div class="week-icon">💻</div>
+                        <h3 class="week-title">Week 1: Computers & Internet</h3>
                     </div>
-                    <div class="course-weeks" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:auto;">
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(74,144,226,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#4a90e2;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">💻</span>Week 1: Computers & Internet</h3>
-                            <ul style="margin-left:1.2em;">
-                                <li><strong>Day 1:</strong> What is a computer? Hardware vs Software, Basic parts, Turning on/off safely</li>
-                                <li><strong>Day 2:</strong> Internet basics & safety, Gmail, Google Workspace (Docs, Drive)</li>
-                                <li><strong>Day 3:</strong> Word Processing: Typing, editing, formatting, saving, printing</li>
-                            </ul>
-                        </div>
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(74,144,226,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#4a90e2;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">📊</span>Week 2: Spreadsheet Basics</h3>
-                            <ul style="margin-left:1.2em;">
-                                <li><strong>Day 4:</strong> Spreadsheet environment, rows, columns, cells, entering data</li>
-                                <li><strong>Day 5:</strong> Formatting, merging, formulas (=SUM, =AVERAGE, =COUNT), auto-fill</li>
-                                <li><strong>Day 6:</strong> Real-life tasks: score sheet, timetable, budget tracker</li>
-                            </ul>
-                        </div>
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(245,166,35,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#f5a623;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">🎨</span>Week 3: Graphics Design</h3>
-                            <ul style="margin-left:1.2em;">
-                                <li><strong>Day 7:</strong> What is graphic design? Canva/PowerPoint overview, templates</li>
-                                <li><strong>Day 8:</strong> School ID card, event flyer, timetable design</li>
-                                <li><strong>Day 9:</strong> Presentations: slides, text, images, animations, presenting</li>
-                            </ul>
-                        </div>
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#2c3e50;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">🖨️</span>Week 4: Photocopy & Integration</h3>
-                            <ul style="margin-left:1.2em;">
-                                <li><strong>Day 10:</strong> Photocopy machine parts, making copies, loading paper, clearing jams</li>
-                            </ul>
-                        </div>
+                    <ul>
+                        <li><strong>Day 1:</strong> What is a computer? Hardware vs Software, Basic parts, Turning on/off safely</li>
+                        <li><strong>Day 2:</strong> Internet basics & safety, Gmail, Google Workspace (Docs, Drive)</li>
+                        <li><strong>Day 3:</strong> Word Processing: Typing, editing, formatting, saving, printing</li>
+                    </ul>
+                </div>
+                
+                <div class="week-card week-2 reveal">
+                    <div class="week-header">
+                        <div class="week-icon">📊</div>
+                        <h3 class="week-title">Week 2: Spreadsheet Basics</h3>
                     </div>
-                    <style>
-                        @media (max-width: 900px) {
-                            .course-weeks { grid-template-columns:1fr; }
-                        }
-                        .week-card ul li { margin-bottom:0.7em; }
-                    </style>
-                    <!-- End redesigned course outline -->
-        </section>
+                    <ul>
+                        <li><strong>Day 4:</strong> Spreadsheet environment, rows, columns, cells, entering data</li>
+                        <li><strong>Day 5:</strong> Formatting, merging, formulas (=SUM, =AVERAGE, =COUNT), auto-fill</li>
+                        <li><strong>Day 6:</strong> Real-life tasks: score sheet, timetable, budget tracker</li>
+                    </ul>
+                </div>
+                
+                <div class="week-card week-3 reveal">
+                    <div class="week-header">
+                        <div class="week-icon">🎨</div>
+                        <h3 class="week-title">Week 3: Graphics Design</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Day 7:</strong> What is graphic design? Canva/PowerPoint overview, templates</li>
+                        <li><strong>Day 8:</strong> School ID card, event flyer, timetable design</li>
+                        <li><strong>Day 9:</strong> Presentations: slides, text, images, animations, presenting</li>
+                    </ul>
+                </div>
+                
+                <div class="week-card week-4 reveal">
+                    <div class="week-header">
+                        <div class="week-icon">🖨️</div>
+                        <h3 class="week-title">Week 4: Photocopy & Integration</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Day 10:</strong> Photocopy machine parts, making copies, loading paper, clearing jams</li>
+                        <li><strong>Day 11:</strong> Final project integration - combining all skills learned</li>
+                        <li><strong>Day 12:</strong> Student presentations and course completion certificates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
         <!-- About Us Section -->
     <section id="about" class="section">
         <div class="container">
