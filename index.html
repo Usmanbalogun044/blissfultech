@@ -311,6 +311,26 @@
             transform: translateY(0);
         }
 
+        /* Course Outline Styles */
+        #course-outline { background: #fff; }
+        #course-outline .course-outline-header { text-align:center; margin-bottom: 2rem; }
+        #course-outline .course-meta { margin-top: -0.5rem; margin-bottom: 0.5rem; }
+        #course-outline .badge { display:inline-block; font-weight:600; font-size:0.95rem; color:#2c3e50; padding:0.25em 0.8em; border-radius:999px; margin: 0.2rem 0.35rem; border:1px solid rgba(0,0,0,0.05); }
+        #course-outline .badge-blue { background:#e9f2ff; color:#2a3d66; }
+        #course-outline .badge-amber { background:#fff3df; color:#7a5200; }
+        #course-outline .badge-green { background:#eaffea; color:#1f6b1f; }
+        #course-outline .course-submeta { color:#7f8c8d; font-size:0.98rem; }
+        #course-outline .weeks-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        #course-outline .week-card { background: var(--light-color); border:1px solid #eee; border-radius: var(--border-radius); padding: 1.5rem 1.25rem; box-shadow: 0 10px 20px rgba(0,0,0,0.04); transition: transform var(--transition-speed), box-shadow var(--transition-speed); }
+        #course-outline .week-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgba(0,0,0,0.08); }
+        #course-outline .week-title { color: var(--primary-color); font-size:1.35rem; margin-bottom: 0.6rem; display:flex; align-items:center; gap: 0.5rem; }
+        #course-outline .week-title.accent-amber { color: var(--secondary-color); }
+        #course-outline .week-title.accent-dark { color: var(--dark-color); }
+        #course-outline .emoji { font-size: 1.4rem; }
+        #course-outline ul { padding-left: 1.2rem; }
+        #course-outline ul li { margin-bottom: 0.6rem; }
+        @media (max-width: 900px) { #course-outline .weeks-grid { grid-template-columns: 1fr; } }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .main-header .container { flex-direction: column; }
@@ -351,7 +371,7 @@
         <div class="hero-content">
             <h1>Ignite Your Creativity & Skills</h1>
             <p>At BlissfulTech, we transform complex technology into simple, powerful tools for your success. Start your journey with us today.</p>
-            <a href="#services" class="btn">Discover Our Courses</a>
+            <a href="#course-outline" class="btn">Discover Our Courses</a>
         </div>
     </section>
 
@@ -417,55 +437,50 @@
     </section>
 
         <!-- Course Outline Section -->
-        <section id="course-outline" style="max-width:800px;margin:2rem auto 4rem auto;padding:2rem;background:#f9f9f9;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-                    <div class="course-outline-header" style="text-align:center;margin-bottom:2rem;">
-                        <h2 style="color:#2a3d66;font-size:2.2rem;margin-bottom:0.5rem;">Basic Digital Skills for Secondary School Students</h2>
-                        <div style="font-size:1.1rem;color:#444;margin-bottom:0.5rem;">
-                            <span style="background:#e3f1ff;padding:0.2em 0.7em;border-radius:20px;margin-right:0.5em;">Ages 14-19</span>
-                            <span style="background:#fff7e3;padding:0.2em 0.7em;border-radius:20px;margin-right:0.5em;">JS3 - SS3</span>
-                            <span style="background:#e3ffe3;padding:0.2em 0.7em;border-radius:20px;">4 Weeks</span>
-                        </div>
-                        <div style="color:#888;font-size:0.98rem;">3 sessions/week, 1.5 hours/session</div>
+            <section id="course-outline" class="section">
+                <div class="container">
+                <div class="course-outline-header reveal">
+                    <h2 class="section-title">Basic Digital Skills for Secondary School Students</h2>
+                    <div class="course-meta">
+                        <span class="badge badge-blue">Ages 14-19</span>
+                        <span class="badge badge-amber">JS3 - SS3</span>
+                        <span class="badge badge-green">4 Weeks</span>
                     </div>
-                    <div class="course-weeks" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:auto;">
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(74,144,226,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#4a90e2;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">💻</span>Week 1: Computers & Internet</h3>
-                            <ul style="margin-left:1.2em;">
+                    <div class="course-submeta">3 sessions/week, 1.5 hours/session</div>
+                </div>
+                <div class="weeks-grid">
+                    <div class="week-card reveal">
+                        <h3 class="week-title"><span class="emoji">💻</span>Week 1: Computers & Internet</h3>
+                        <ul>
                                 <li><strong>Day 1:</strong> What is a computer? Hardware vs Software, Basic parts, Turning on/off safely</li>
                                 <li><strong>Day 2:</strong> Internet basics & safety, Gmail, Google Workspace (Docs, Drive)</li>
                                 <li><strong>Day 3:</strong> Word Processing: Typing, editing, formatting, saving, printing</li>
                             </ul>
                         </div>
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(74,144,226,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#4a90e2;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">📊</span>Week 2: Spreadsheet Basics</h3>
-                            <ul style="margin-left:1.2em;">
+                    <div class="week-card reveal">
+                        <h3 class="week-title"><span class="emoji">📊</span>Week 2: Spreadsheet Basics</h3>
+                        <ul>
                                 <li><strong>Day 4:</strong> Spreadsheet environment, rows, columns, cells, entering data</li>
                                 <li><strong>Day 5:</strong> Formatting, merging, formulas (=SUM, =AVERAGE, =COUNT), auto-fill</li>
                                 <li><strong>Day 6:</strong> Real-life tasks: score sheet, timetable, budget tracker</li>
                             </ul>
                         </div>
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(245,166,35,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#f5a623;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">🎨</span>Week 3: Graphics Design</h3>
-                            <ul style="margin-left:1.2em;">
+                    <div class="week-card reveal">
+                        <h3 class="week-title accent-amber"><span class="emoji">🎨</span>Week 3: Graphics Design</h3>
+                        <ul>
                                 <li><strong>Day 7:</strong> What is graphic design? Canva/PowerPoint overview, templates</li>
                                 <li><strong>Day 8:</strong> School ID card, event flyer, timetable design</li>
                                 <li><strong>Day 9:</strong> Presentations: slides, text, images, animations, presenting</li>
                             </ul>
                         </div>
-                        <div class="week-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.07);padding:1.5rem 1rem;margin-bottom:1rem;">
-                            <h3 style="color:#2c3e50;font-size:1.3rem;margin-bottom:0.7rem;display:flex;align-items:center;"><span style="font-size:1.5rem;margin-right:0.5em;">🖨️</span>Week 4: Photocopy & Integration</h3>
-                            <ul style="margin-left:1.2em;">
+                    <div class="week-card reveal">
+                        <h3 class="week-title accent-dark"><span class="emoji">🖨️</span>Week 4: Photocopy & Integration</h3>
+                        <ul>
                                 <li><strong>Day 10:</strong> Photocopy machine parts, making copies, loading paper, clearing jams</li>
                             </ul>
                         </div>
                     </div>
-                    <style>
-                        @media (max-width: 900px) {
-                            .course-weeks { grid-template-columns:1fr; }
-                        }
-                        .week-card ul li { margin-bottom:0.7em; }
-                    </style>
-                    <!-- End redesigned course outline -->
+                </div>
         </section>
         <!-- About Us Section -->
     <section id="about" class="section">
